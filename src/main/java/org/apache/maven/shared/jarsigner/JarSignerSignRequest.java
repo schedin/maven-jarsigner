@@ -39,11 +39,13 @@ public class JarSignerSignRequest extends AbstractJarSignerRequest {
     private String sigfile;
 
     /**
+     * The {@code -tsa} parameter, the URL to the Time Stamping Authority (TSA) server.
      * See <a href="https://docs.oracle.com/javase/8/docs/technotes/tools/windows/jarsigner.html#CCHIFIAD">options</a>.
      */
     private String tsaLocation;
 
     /**
+     * The {@code -tsacert} parameter, alias of the TSA public key certificate in the keystore that is in effect.
      * See <a href="https://docs.oracle.com/javase/8/docs/technotes/tools/windows/jarsigner.html#CCHIFIAD">options</a>.
      */
     private String tsaAlias;
@@ -57,8 +59,9 @@ public class JarSignerSignRequest extends AbstractJarSignerRequest {
     private String tsapolicyid;
 
     /**
-     * The {@code -tsadigestalg} parameter, the OID that identifies the policy ID. Only available in Java 11 and later.
-     * See <a href="https://docs.oracle.com/en/java/javase/11/tools/jarsigner.html#GUID-925E7A1B-B3F3-44D2-8B49-0B3FA2C54864__CCHIFIAD">options</a>.
+     * The {@code -tsadigestalg} parameter, the message digest algorithm for TSA server to use. Only available in Java
+     * 11 and later. See
+     * <a href="https://docs.oracle.com/en/java/javase/11/tools/jarsigner.html">options</a>.
      *
      * @since 3.1.0
      */
