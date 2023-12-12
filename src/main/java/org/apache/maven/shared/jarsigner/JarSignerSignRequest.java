@@ -29,34 +29,50 @@ import java.io.File;
 public class JarSignerSignRequest extends AbstractJarSignerRequest {
 
     /**
-     * See <a href="http://docs.oracle.com/javase/6/docs/technotes/tools/windows/jarsigner.html#Options">options</a>.
+     * See <a href="https://docs.oracle.com/javase/8/docs/technotes/tools/windows/jarsigner.html#CCHIFIAD">options</a>.
      */
     private String keypass;
 
     /**
-     * See <a href="http://docs.oracle.com/javase/6/docs/technotes/tools/windows/jarsigner.html#Options">options</a>.
+     * See <a href="https://docs.oracle.com/javase/8/docs/technotes/tools/windows/jarsigner.html#CCHIFIAD">options</a>.
      */
     private String sigfile;
 
     /**
-     * See <a href="http://docs.oracle.com/javase/6/docs/technotes/tools/windows/jarsigner.html#Options">options</a>.
+     * See <a href="https://docs.oracle.com/javase/8/docs/technotes/tools/windows/jarsigner.html#CCHIFIAD">options</a>.
      */
     private String tsaLocation;
 
     /**
-     * See <a href="http://docs.oracle.com/javase/6/docs/technotes/tools/windows/jarsigner.html#Options">options</a>.
+     * See <a href="https://docs.oracle.com/javase/8/docs/technotes/tools/windows/jarsigner.html#CCHIFIAD">options</a>.
      */
     private String tsaAlias;
 
     /**
-     * See <a href="http://docs.oracle.com/javase/6/docs/technotes/tools/windows/jarsigner.html#Options">options</a>.
+     * The {@code -tsapolicyid} parameter, the OID that identifies the policy ID.
+     * See <a href="https://docs.oracle.com/javase/8/docs/technotes/tools/windows/jarsigner.html#CCHIFIAD">options</a>.
+     *
+     * @since 3.1.0
+     */
+    private String tsapolicyid;
+
+    /**
+     * The {@code -tsadigestalg} parameter, the OID that identifies the policy ID. Only available in Java 11 and later.
+     * See <a href="https://docs.oracle.com/en/java/javase/11/tools/jarsigner.html#GUID-925E7A1B-B3F3-44D2-8B49-0B3FA2C54864__CCHIFIAD">options</a>.
+     *
+     * @since 3.1.0
+     */
+    private String tsadigestalg;
+
+    /**
+     * See <a href="https://docs.oracle.com/javase/8/docs/technotes/tools/windows/jarsigner.html#CCHIFIAD">options</a>.
      */
     protected File signedjar;
 
     /**
      * Location of the extra certchain file to be used during signing.
      *
-     * See <a href="http://docs.oracle.com/javase/7/docs/technotes/tools/windows/jarsigner.html#Options">options</a>.
+     * See <a href="https://docs.oracle.com/javase/8/docs/technotes/tools/windows/jarsigner.html#CCHIFIAD">options</a>.
      * @since 3.0.0
      */
     protected File certchain;
@@ -77,6 +93,14 @@ public class JarSignerSignRequest extends AbstractJarSignerRequest {
         return tsaAlias;
     }
 
+    public String getTsapolicyid() {
+        return tsapolicyid;
+    }
+
+    public String getTsadigestalg() {
+        return tsadigestalg;
+    }
+
     public void setKeypass(String keypass) {
         this.keypass = keypass;
     }
@@ -91,6 +115,14 @@ public class JarSignerSignRequest extends AbstractJarSignerRequest {
 
     public void setTsaAlias(String tsaAlias) {
         this.tsaAlias = tsaAlias;
+    }
+
+    public void setTsapolicyid(String tsapolicyid) {
+        this.tsapolicyid = tsapolicyid;
+    }
+
+    public void setTsadigestalg(String tsadigestalg) {
+        this.tsadigestalg = tsadigestalg;
     }
 
     public File getSignedjar() {
